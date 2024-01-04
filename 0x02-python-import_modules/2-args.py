@@ -4,11 +4,11 @@ if __name__ == "__main__":
     word_arg = len(sys.argv) - 1
 
     if word_arg == 0:
-        print("{} arguements.".format(l))
+        print("{} arguements.".format(word_arg))
     elif word_arg == 1:
-        print("{} arguement:".format(l))
+        print("{} arguement:".format(word_arg))
     else:
-        print("{} arguement:".format(l))
+        print("{} arguement:".format(word_arg))
 
     if word_arg >= 1:
         word_arg = 0
