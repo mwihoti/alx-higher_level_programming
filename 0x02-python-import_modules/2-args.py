@@ -15,4 +15,4 @@ if __name__ == "__main__":
         for arg in sys.argv:
             if word_arg != 0:
                 print("{}: {}".format(word_arg, arg))
-                word_arg += 1
+            word_arg += 1
