@@ -8,7 +8,7 @@ if __name__ == "__main__":
     elif word_arg == 1:
         print("{} arguement:".format(word_arg))
     else:
-        print("{} arguement:".format(word_arg))
+        print("{} arguements:".format(word_arg))
 
     if word_arg >= 1:
         word_arg = 0
