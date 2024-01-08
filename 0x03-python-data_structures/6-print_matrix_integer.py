@@ -5,7 +5,7 @@ def print_matrix_integer(matrix=[[]]):
     else:
         for m in range(len(matrix)):
             for mat in range(len(matrix[m])):
-                if mat != len(matrix[m])- 1:
+                if mat != len(matrix[m]) - 1:
                     endspace = ' '
                 else:
                     endspace = ''
