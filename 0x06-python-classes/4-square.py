@@ -8,7 +8,7 @@ class Square:
     def __init__(self, size=0):
         """Initializing atrtribute
         args:
-            size- to be int"""
+            size(int) - to be int"""
         self.size = size
 
     @property
@@ -29,4 +29,8 @@ class Square:
         self.__size = value
 
     def area(self):
+        """Get area of the square
+        Returns:
+            Area of the square(int)
+        """
         return self.__size * self.__size
