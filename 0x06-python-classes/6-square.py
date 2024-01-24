@@ -4,11 +4,7 @@
 
 
 class Square:
-    """Represents a square
-    attributes:
-        __size (int): size of square.
-        __position(tuple: position of the square in 2d space
-    """
+    """Represents a square"""
     def __init__(self, size=0, position=(0, 0)):
         """Initializing instance of square class.
         args:
