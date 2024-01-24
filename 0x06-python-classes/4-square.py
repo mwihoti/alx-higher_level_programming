@@ -10,7 +10,8 @@ class Square:
         """Initializing atrtribute
 
         args:
-            size(int) - to be int"""
+            size(int) - to be int
+        """
         self.size = size
 
     @property
