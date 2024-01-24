@@ -4,8 +4,13 @@
 
 
 class Square:
+    """Represents a square
+    attributes:
+        __size (int): size of square.
+        __position(tuple: position of the square in 2d space
+    """
     def __init__(self, size=0, position=(0, 0)):
-        """Initializing atrtribute
+        """Initializing instance of square class.
         args:
             position - square position
             size- to be int"""
@@ -22,6 +27,9 @@ class Square:
         """property setter
         args:
             value
+        Raise:
+            TypeError: if not an integer
+            ValueError: if value is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -36,6 +44,10 @@ class Square:
 
     @position.setter
     def position(self, value):
+        """sets the position atrribute.
+        Args"
+            value (tuple): value to set as position
+        """
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(elem, int) for elem in value) or
@@ -44,6 +56,7 @@ class Square:
         self.__position = value
 
     def area(self):
+        """Calculate area of square"""
         return self.__size * self.__size
 
     def my_print(self):
