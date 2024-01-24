@@ -10,20 +10,22 @@ class Square:
         """Initializing atrtribute
 
         args:
-            size(int) - to be int
+            size(int): to be int
         """
         self.size = size
 
     @property
     def size(self):
-        """getter - retrive private size attribute"""
+        """getter : retrive private size attribute"""
         return(self.__size)
 
     @size.setter
     def size(self, value):
-        """setter - property setter
+        """setter:  property setter.
+
         args:
-            value
+            value: value to set as size.
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than 0.
@@ -38,6 +40,6 @@ class Square:
         """Get area of the square
 
         Returns:
-            Area of the square(int)
+            Area of the square(int).
         """
         return self.__size * self.__size

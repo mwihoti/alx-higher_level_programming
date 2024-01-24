@@ -26,7 +26,8 @@ class Square:
     def size(self, value):
         """property setter
         args:
-            value
+            value: vlaue to size sat size.
+
         Raise:
             TypeError: if not an integer
             ValueError: if value is less than 0.
@@ -45,8 +46,8 @@ class Square:
     @position.setter
     def position(self, value):
         """sets the position atrribute.
-        Args"
-            value (tuple): value to set as position
+        Args:
+            value (tuple): value to set as position.
         """
         if (not isinstance(value, tuple) or
                 len(value) != 2 or

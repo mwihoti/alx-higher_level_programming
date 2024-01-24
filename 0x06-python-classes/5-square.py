@@ -5,10 +5,13 @@
 
 class Square:
     """The class to create square"""
+
     def __init__(self, size=0):
         """Initializing atrtribute
+
         args:
-            size- to be int"""
+            size: to be int
+        """
         self.size = size
 
     @property
@@ -19,8 +22,13 @@ class Square:
     @size.setter
     def size(self, value):
         """property setter
+
         args:
-            value
+            value: value to set as size
+
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
