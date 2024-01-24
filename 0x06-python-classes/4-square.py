@@ -42,4 +42,4 @@ class Square:
         Returns:
             Area of the square(int).
         """
-        return self.__size * self.__size
+        return(self.__size * self.__size)
