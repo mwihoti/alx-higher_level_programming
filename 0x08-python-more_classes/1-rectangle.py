@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+
 """
-Calculates Rectangle Area and perimeter
+Checks Rectangle Width anf height
 """
 
 
@@ -11,6 +12,10 @@ class Rectangle:
     def __init__(self, width, height):
         """
         initializes Reactangle width and height
+
+        args:
+            width: width
+            height: height
         """
         self.width = width
         self.height = height
