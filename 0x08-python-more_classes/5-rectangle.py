@@ -29,6 +29,7 @@ class Rectangle:
         """Return internal string representation eval magic
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
+
     def __del__(self):
         """Deletes a rectangle area and perimeter
         """
