@@ -1,0 +1,28 @@
+Test for 5-text_indentation.py
+=============================
+
+Defines function 'text_indentation(text)'
+
+Prints 2 new lines after characters '., ?, :'
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation("Hello?")
+	Hello?
+	<BLANKLINE>
+
+	No spaces at begining of a line.
+
+	::
+
+		>>> text_indentation("   Hi there.")
+		Hi there.
+		<BLANKLINE>
+
+	>>> text_indentation("		")
+
+	>>> text_indentation("Hello, Mark")
+	Hello, Mark
+
+	>>> text_indentation(7)
+	Traceback (most recent call last):
+	TypeError: text must be a string
