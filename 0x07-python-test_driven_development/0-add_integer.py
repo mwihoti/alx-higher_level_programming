@@ -4,6 +4,7 @@
 Define integer addition
 """
 
+
 def add_integer(a, b=98):
     """
     method add_integers.
