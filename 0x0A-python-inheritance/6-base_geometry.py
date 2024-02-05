@@ -11,6 +11,7 @@ class BaseGeometry:
     class BaseGeometry
     """
 
+    @classmethod
     def area(self):
         """
         raises: Exception if area is not implemented
