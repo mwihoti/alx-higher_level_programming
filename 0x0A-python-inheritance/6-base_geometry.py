@@ -1,7 +1,7 @@
 #!usr/bin/python3
 
 """
-6-base_geometry.py module
+6-base_geometry module
 """
 
 
