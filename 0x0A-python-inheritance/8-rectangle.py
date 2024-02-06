@@ -1,12 +1,13 @@
 #!/usr/bin/python3
+# BaseGeometry class is imported from another module
+
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 """
 ==============================
-class Rectangle
+Class Rectangle
 ===================================
 """
-
 
 class Rectangle(BaseGeometry):
     """Rectangle class that inherits from BaseGeometry"""
