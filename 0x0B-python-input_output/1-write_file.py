@@ -2,6 +2,9 @@
 """
 Defines a function writes a string to text file
 """
+
+
+
 def write_file(filename="", text=""):
     """
     writes string to a text file
