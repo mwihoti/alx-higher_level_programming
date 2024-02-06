@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""
+defines square#2
+"""
 Rectangle = __import__('9-rectangle').Rectangle
 
 
-"""
-module square#2
-"""
 class Square(Rectangle):
     """
     Square that inherits from Rectangle
