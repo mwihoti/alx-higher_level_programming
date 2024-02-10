@@ -5,7 +5,7 @@ Defines Rectangle that inherits from base
 from models.base import Base
 
 
-class Rectangle:
+class Rectangle(Base):
     """
     Defines class Rectangle
     """
@@ -25,61 +25,61 @@ class Rectangle:
         self.y = y
         super().__init__(id)
 
-        @property
-        def height(self):
-            """
-            gets rectangle height
-            """
-            return self.__height
+    @property
+    def height(self):
+        """
+        gets rectangle height
+        """
+        return self.__height
 
-        @height.setter
-        def height(self, value):
-            if type(value) != int:
-                raise TypeError("height must be an integer")
-            if value <= 0:
-                raise ValueError("height must be > 0")
-            self.__height = value
+    @height.setter
+    def height(self, value):
+        if type(value) != int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
 
-        @property
-        def width(self):
-            """
-            gets rectangle width
-            """
-            return self.__width
+    @property
+    def width(self):
+        """
+        gets rectangle width
+        """
+        return self.__width
 
-        @width.setter
-        def width(self, value):
-            if type(value) != int:
-                raise TypeError("width must be an integer")
-            if value <= 0:
-                raise ValueError("width must be > 0")
-            self.__width = value
+    @width.setter
+    def width(self, value):
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
 
-        @property
-        def x(self):
-            """
-            gets x value
-            """
-            return self.__X
+    @property
+    def x(self):
+        """
+        gets x value
+        """
+        return self.__X
 
-        @x.setter
-        def x(self, value):
-            if type(value) != int:
-                raise TypeError("x must be an integer")
-            if value < 0:
-                raise ValueError("x must be >= 0")
-            self.__x = value
+    @x.setter
+    def x(self, value):
+        if type(value) != int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
 
-        @property
-        def y(self):
-            """
-            gets value of y
-            """
-            return self.__y
+    @property
+    def y(self):
+        """
+        gets value of y
+        """
+        return self.__y
 
-        @y.setter
-        def y(self, value):
-            if type(value) != int:
-                raise TypeError("y must be an integer")
-            if y < 0:
-                raise ValueError("y must be >= 0")
+    @y.setter
+    def y(self, value):
+        if type(value) != int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
