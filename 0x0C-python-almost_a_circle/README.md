@@ -1,6 +1,6 @@
 # 0x0C. Python - Almost a circle
 
-## This project  will review the below areas about Python:
+## This project  will review the  below areas in Python:
 
 * Import
 * Exceptions
