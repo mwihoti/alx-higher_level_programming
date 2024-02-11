@@ -61,7 +61,7 @@ class Rectangle(Base):
         """
         gets x value
         """
-        return self.__X
+        return self.__x
 
     @x.setter
     def x(self, value):
@@ -84,6 +84,7 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
+        self.__y = value
 
     def area(self):
         """
@@ -104,3 +105,10 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
+
+    def __str__(self):
+       """
+       Prints rectangle with a formatted output
+       """
+       return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+               self.y, self.width, self.height)
