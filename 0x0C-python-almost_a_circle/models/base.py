@@ -43,7 +43,7 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsfile:
             if list_objs is None:
-                jsfile.write("{}")
+                jsfile.write("[]")
             else:
                 list_dict = [k.to_dictionary() for k in list_objs]
                 jsfile.write(Base.to_json_string(list_dict))

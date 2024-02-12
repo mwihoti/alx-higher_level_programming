@@ -16,7 +16,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
-class TestBase_instantiation(unittest.Testcase):
+class TestBase_instantiation(unittest.TestCase):
     """
     unittest for TestBase_instantiation
     """
