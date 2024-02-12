@@ -64,7 +64,7 @@ class TestSquare_instantiation(unittest.TestCase):
     def test_height_getter(self):
         s = Square(4, 11, 9, 2)
         s.size = 8
-        self.assertEqual(7, s.height)
+        self.assertEqual(8, s.height)
 
     def test_x_getter(self):
         self.assertEqual(0, Square(16).x)
@@ -148,7 +148,7 @@ class TestSquare_x(unittest.TestCase):
 
     def test_inf_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Square(8, float('hey'), 4)
+            Square(8, float('5.8'), 4)
 
     def test_nanx(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
@@ -189,20 +189,20 @@ class TestSquare_stdout(unittest.TestCase):
         """
         Captures and returns text printed to stdout.
         """
-        cap_ture = io.StringIO()
-        sys.stdout = cap_ture
+        capture = io.StringIO()
+        sys.stdout = capture
         if method == "print":
             print(sq)
         else:
             sq.display()
         sys.stdout = sys.__stdout__
-        return cap_ture
+        return capture
 
     def test_str_method_printsize(self):
         s = Square(5)
-        cap_ture = TestSquare_stdout.cap_ture_stdout(s, "print")
+        capture = TestSquare_stdout.capture_stdout(s, "print")
         correct = "[Square] ({}) 0/0 - 5\n".format(s.id)
-        self.assertEqual(correct, cap_ture.getvalue())
+        self.assertEqual(correct, capture.getvalue())
 
     def test_str_methodsizex(self):
         s = Square(5, 5)
@@ -232,24 +232,24 @@ class TestSquare_stdout(unittest.TestCase):
 
     def test_disp_size(self):
         s = Square(2, 0, 0, 9)
-        cap_ture = TestSquare_stdout.cap_ture_stdout(s, "display")
-        self.assertEqual("##\n##\n", cap_ture.getvalue())
+        capture = TestSquare_stdout.capture_stdout(s, "display")
+        self.assertEqual("##\n##\n", capture.getvalue())
 
     def test_disp_sizex(self):
         s = Square(3, 1, 0, 18)
-        cap_ture = TestSquare_stdout.cap_ture_stdout(s, "display")
-        self.assertEqual(" ###\n ###\n ###\n", cap_ture.getvalue())
+        capture = TestSquare_stdout.capture_stdout(s, "display")
+        self.assertEqual(" ###\n ###\n ###\n", capture.getvalue())
 
     def test_disp_sizey(self):
         s = Square(4, 0, 1, 9)
-        cap_ture = TestSquare_stdout.cap_ture_stdout(s, "display")
+        capture = TestSquare_stdout.capture_stdout(s, "display")
         display = "\n####\n####\n####\n####\n"
-        self.assertEqual(display, cap_ture.getvalue())
+        self.assertEqual(display, capture.getvalue())
 
     def test_dispsizex_y(self):
-        s = Square(3, 3, 2, 1)
-        cap_ture = TestSquare_stdout.cap_ture_stdout(s, "display")
-        display = "\n\n   ###\n   ###\n"
+        s = Square(2, 3, 2, 1)
+        capture = TestSquare_stdout.capture_stdout(s, "display")
+        display = "\n\n   ##\n   ##\n"
         self.assertEqual(display, capture.getvalue())
 
     def test_disp_one_arg(self):
@@ -287,14 +287,14 @@ class TestSquare_update_args(unittest.TestCase):
 
     def test_update_args_Noneid(self):
         s = Square(10, 10, 10, 10)
-        s.update(None)
+        s.update(id=None)
         correct = "[Square] ({}) 10/10 - 10".format(s.id)
         self.assertEqual(correct, str(s))
 
     def test_update_args_Noneid_more(self):
-        s = Square(10, 10, 10, 16)
+        s = Square(10, 10, 10, 10)
         s.update(None, 2, 8)
-        correct = "[Square] ({}) 8/16 - 2".format(s.id)
+        correct = "[Square] ({}) 8/10 - 2".format(s.id)
         self.assertEqual(correct, str(s))
 
     def test_update_args_getx_negative(self):
