@@ -47,7 +47,7 @@ class Base:
             else:
                 list_dict = [k.to_dictionary() for k in list_objs]
                 jsfile.write(Base.to_json_string(list_dict))
-    
+
     @staticmethod
     def from_json_string(json_string):
         """
@@ -70,6 +70,7 @@ class Base:
                 new = cls(1)
             new.update(**dictionary)
             return new
+
     @classmethod
     def load_from_file(cls):
         """
