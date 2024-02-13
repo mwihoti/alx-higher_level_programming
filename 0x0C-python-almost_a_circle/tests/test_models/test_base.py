@@ -16,6 +16,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
+
 class TestBase_instantiation(unittest.TestCase):
     """
     unittest for TestBase_instantiation
@@ -44,7 +45,7 @@ class TestBase_instantiation(unittest.TestCase):
         n1 = Base()
         n2 = Base(10)
         n3 = Base()
-        self.assertEqual(n1.id, n3.id -1)
+        self.assertEqual(n1.id, n3.id - 1)
 
     def test_str_id(self):
         self.assertEqual("dan", Base("dan").id)
@@ -65,7 +66,7 @@ class TestBase_instantiation(unittest.TestCase):
         self.assertEqual([1, 2, 3], Base([1, 2, 3]).id)
 
     def test_tuples_id(self):
-        self.assertEqual((2,4), Base((2, 4)).id)
+        self.assertEqual((2, 4), Base((2, 4)).id)
 
     def test_set_id(self):
         self.assertEqual({1, 2, 3}, Base({1, 2, 3}).id)
@@ -79,19 +80,21 @@ class TestBase_instantiation(unittest.TestCase):
     def test_bytes_id(self):
         self.assertEqual(b'Python', Base(b'Python').id)
 
+
 class TestBase_to_json_string(unittest.TestCase):
     """Unittests for testing to_json_string method of Base class."""
 
     def test_to_json_string_rectangle_type(self):
         r = Rectangle(10, 8, 5, 2, 6)
         self.assertEqual(str, type(Base.to_json_string([r.to_dictionary
-            ()])))
-         
+                                   ()])))
+
     def test_to_json_string_rect_dict(self):
         r = Rectangle(11, 7, 2, 6, 9)
 
         self.assertTrue(len(Base.to_json_string([r.to_dictionary()]))
-                == 53)
+                        == 53)
+
     def test_to_json_string_rectangle_two_dicts(self):
         r1 = Rectangle(2, 3, 5, 19, 2)
         r2 = Rectangle(4, 2, 4, 1, 12)
@@ -123,6 +126,7 @@ class TestBase_to_json_string(unittest.TestCase):
         with self.assertRaises(TypeError):
             Base.to_json_string()
 
+
 class TestBase_save_to_file(unittest.TestCase):
     """Unittests for testing save_to_file method of Base class."""
 
@@ -141,7 +145,7 @@ class TestBase_save_to_file(unittest.TestCase):
             os.remove("Base.json")
         except IOError:
             pass
-    
+
     def test_save_to_file_one_rectangle(self):
         r = Rectangle(10, 7, 2, 8, 5)
         Rectangle.save_to_file([r])
@@ -191,6 +195,8 @@ class TestBase_save_to_file(unittest.TestCase):
         Square.save_to_file([])
         with open("Square.json", "r") as f:
             self.assertEqual("[]", f.read())
+
+
 class TestBase_from_json_string(unittest.TestCase):
     """Unittests for testing from_json_string method of Base class."""
 
@@ -235,6 +241,8 @@ class TestBase_from_json_string(unittest.TestCase):
 
     def test_from_json_string_empty_list(self):
         self.assertEqual([], Base.from_json_string("[]"))
+
+
 class TestBase_create(unittest.TestCase):
     """Unittests for testing create method of Base class."""
 
@@ -347,5 +355,7 @@ class TestBase_load_from_file(unittest.TestCase):
     def test_load_from_file_no_file(self):
         output = Square.load_from_file()
         self.assertEqual([], output)
+
+
 if __name__ == "__main__":
     unittest.main()
