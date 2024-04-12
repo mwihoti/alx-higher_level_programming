@@ -11,5 +11,5 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states")
     for row in cur.fetchall():
         print(row)
-    c.close()
+    cur.close()
     db.close()
