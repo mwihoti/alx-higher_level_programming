@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-# Deletes the State object "Louisiana" from the database hbtn_0e_6_usa.
-# Usage: ./script_name.py <mysql username> <mysql password> <database name>
+"""Deletes the State object "Louisiana" from the database hbtn_0e_6_usa"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
