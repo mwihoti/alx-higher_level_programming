@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Deletes the State object "Louisiana" from the database hbtn_0e_6_usa"""
-import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
@@ -12,7 +11,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for delState in session.query(State):
-        if "a" in delState.name:
+    for delState in session.query(State).filter(State.name.like('%a%')):
             session.delete(delState)
     session.commit()
