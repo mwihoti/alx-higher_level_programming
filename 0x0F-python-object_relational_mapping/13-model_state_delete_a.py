@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Deletes the State object "Louisiana" from the database hbtn_0e_6_usa"""
 from sqlalchemy import create_engine
+import sys
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
