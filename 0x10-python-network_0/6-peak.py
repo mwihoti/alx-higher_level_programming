@@ -10,7 +10,19 @@ def find_peak(list_of_integers):
     """
     lists = list_of_integers
     len_lists = len(lists)
-    for i in range(1, len_lists - 1):
-        if (lists[i - 1] <= lists[i] >= lists[i + 1]):
-            return (lists[i])
-    return (None)
+    if len_lists == 0:
+        return None
+    if len_lists == 1:
+        return lists[0]
+    if len_lists == 2:
+        return max(lists)
+
+    left = 0
+    right = len_lists - 1
+    while left < right:
+        mid = (left + right) // 2
+        if lists[mid] < lists[mid + 1]:
+            left = mid + 1
+        else:
+            right = mid
+    return lists[left]
