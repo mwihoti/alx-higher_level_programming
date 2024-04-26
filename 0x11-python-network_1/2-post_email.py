@@ -9,11 +9,10 @@ import sys
 
 
 if __name__ == "__main__":
-    with urllib.request.urlopen(sys.argv[1]) as response:
         url = sys.argv[1]
         var = {"email": sys.argv[2]}
         parsed = urllib.parse.urlencode(var).encode("ascii")
         
         request = urllib.request.Request(url, parsed)
-        with urllib.request.urlopen(request) as res:
-            print(res.read().decode("utf-8"))
+        with urllib.request.urlopen(request) as response:
+            print(response.read().decode("utf-8"))
