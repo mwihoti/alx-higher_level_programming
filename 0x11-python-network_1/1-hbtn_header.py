@@ -4,6 +4,8 @@ import sys
 """
 Python script that takes in a URL, sends a request to the URL
 """
+
+
 if __name__ == "__main__":
     with urllib.request.urlopen(sys.argv[1]) as response:
         res = response.info()
